@@ -111,3 +111,67 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+#------------------------------------------------------------------------------
+# My own stuff [ew]
+
+# 2014-06-30 00:25:51 -0700 PDT Mon
+
+# Liberal umask
+umask 022
+
+# $PS stuff
+if [ -f "$HOME/bin/.ps1" ]; then
+  . $HOME/bin/.ps1
+else
+  export PS1='\[\e[0;1;36;44m\]\u@\h:\w\$\[\e[0m\] '
+fi
+
+# $PATH stuff
+#
+# Add /usr/local/bin at the start of $PATH if it doesn't exist already
+# (somewhere in $PATH)
+if echo $PATH | egrep -v "(^|:)/usr/local/bin(:|$)" > /dev/null 2>&1; then
+  export PATH="/usr/local/bin:$PATH"
+fi
+# Add ~/bin/ at the start of $PATH if it isn't there already
+if echo $PATH | egrep -v "^$HOME/bin:" > /dev/null 2>&1; then
+  export PATH="$HOME/bin:$PATH"
+fi
+#
+# TODO:  Should also make sure root has 
+#   /usr/local/sbin:/sbin:/usr/sbin
+# in $PATH
+
+# Locale stuff
+export LC_CTYPE="en_US.UTF-8"
+export LC_COLLATE="POSIX"
+
+# Screen stuff
+# TODO: This fucks up the $PS1 prompt, so it's currently commented out.
+#export PROMPT_COMMAND='[ "$LINENO" = "0" ] && echo -n -e "\033[999E\033[K"; echo -n -e "\033k\033\0134"'
+
+# Meltwater stuff
+export MW_WORKSPACE_HOME=/home/ew/svn_tree
+export SVNMERGE=/home/ew/bin/svnmerge.py
+
+# Some more environment variables
+export HISTCONTROL="ignoredups"
+export EDITOR="vi"
+export VISUAL="vi"
+export PAGER="less"
+export LESS="-QiM"
+export LESSKEY=~/.less
+#
+export LYNX_CFG="~/lynx.cfg"
+export PYTHONSTARTUP=~/.pythonrc.py
+export RCSINIT='-zLT'
+export RSYNC_RSH='ssh'
+export UNISONBACKUPDIR=/home/ewtmp/.unison/backup/
+export BROWSER=firefox
+
+# source file with ssh-agent environment variables if it's there
+if [ -e ~/.ssh-agent-env_$HOSTNAME ]; then . ~/.ssh-agent-env_$HOSTNAME; fi
+
+#------------------------------------------------------------------------------
+
