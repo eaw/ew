@@ -1,0 +1,1 @@
+../stow/info-1.5/plugin/info.vim

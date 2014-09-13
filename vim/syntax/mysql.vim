@@ -1,0 +1,1 @@
+../stow/mysql-2002-04-17/syntax/mysql.vim

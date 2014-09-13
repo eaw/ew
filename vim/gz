@@ -1,0 +1,18 @@
+" ([ew] excerpt from the .vimrc example file (vimrc) that came with vim v4.5)
+"
+" Enable editing of gzipped files
+"    read: set binary mode before reading the file
+"          uncompress text in buffer after reading
+"   write: compress file after writing
+"  append: uncompress file, append, compress file
+autocmd BufReadPre,FileReadPre      *.gz set bin
+autocmd BufReadPost,FileReadPost    *.gz '[,']!gunzip
+autocmd BufReadPost,FileReadPost    *.gz set nobin
+
+autocmd BufWritePost,FileWritePost  *.gz !mv <afile> <afile>:r
+autocmd BufWritePost,FileWritePost  *.gz !gzip <afile>:r
+
+autocmd FileAppendPre		    *.gz !gunzip <afile>
+autocmd FileAppendPre		    *.gz !mv <afile>:r <afile>
+autocmd FileAppendPost		    *.gz !mv <afile> <afile>:r
+autocmd FileAppendPost		    *.gz !gzip <afile>:r

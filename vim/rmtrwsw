@@ -1,0 +1,4 @@
+:normal 2k
+:%s/[ 	]\+$//g
+:normal 2k
+:w

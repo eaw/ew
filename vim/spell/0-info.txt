@@ -1,0 +1,30 @@
+# spellfile with additional personal words
+en.latin1.add
+en.latin1.add.spl
+
+# norwegian bokmaal files
+# fetched from http://ftp.vim.org/vim/runtime/spell/
+nb.latin1.spl
+nb.latin1.sug
+nb.utf-8.spl
+nb.utf-8.sug
+
+# renamed version of files from the debian package myspell-nb
+#   no.aff = /usr/share/myspell/dicts/nb_NO.aff
+#   no.dic = /usr/share/myspell/dicts/nb_NO.dic
+no.aff
+no.dic
+
+# norwegian bokmaal files
+# files generated from the myspell files above
+#   ascii:
+#     :mkspell -ascii ./no ./no
+#   latin1:
+#     :mkspell ./no ./no
+#   utf-8
+#     $ (export LC_CTYPE=no_NO.utf-8; vi)
+#     :mkspell ./no ./no
+no.ascii.spl
+no.latin1.spl
+no.utf-8.spl
+

@@ -1,0 +1,50 @@
+SpecialKey     term=bold  ctermfg=1  guifg=Blue
+NonText        term=bold  ctermfg=9  gui=bold  guifg=Blue
+Directory      term=bold  ctermfg=1  guifg=Blue
+ErrorMsg       term=standout  ctermfg=15  ctermbg=4  guifg=White  guibg=Red
+IncSearch      links to Visual
+Search         term=reverse  ctermbg=14  guibg=Yellow
+MoreMsg        term=bold  ctermfg=2  gui=bold  guifg=SeaGreen
+ModeMsg        term=bold  cterm=bold  gui=bold
+LineNr         term=underline  ctermfg=6  guifg=Brown
+Question       term=standout  ctermfg=2  gui=bold  guifg=SeaGreen
+StatusLine     term=bold,reverse  cterm=bold,reverse  gui=bold,reverse
+StatusLineNC   term=reverse  cterm=reverse  gui=reverse
+Title          term=bold  ctermfg=5  gui=bold  guifg=Magenta
+Visual         term=reverse  cterm=reverse  gui=reverse
+WarningMsg     term=standout  ctermfg=4  guifg=Red
+Cursor         guifg=bg  guibg=fg
+Normal         font=7x13
+Comment        term=bold  ctermfg=1  guifg=Blue
+Constant       term=underline  ctermfg=4  guifg=Magenta
+Special        term=bold  ctermfg=5  guifg=SlateBlue
+Identifier     term=underline  ctermfg=3  guifg=DarkCyan
+Statement      term=bold  ctermfg=6  gui=bold  guifg=Brown
+PreProc        term=underline  ctermfg=5  guifg=Purple
+Type           term=underline  ctermfg=2  gui=bold  guifg=SeaGreen
+Error          term=reverse  ctermfg=15  ctermbg=12  guifg=White  guibg=Red
+Todo           term=standout  ctermfg=0  ctermbg=14  guifg=Blue  guibg=Yellow
+String         links to Constant
+Character      links to Constant
+Number         links to Constant
+Boolean        links to Constant
+Float          links to Number
+Function       links to Identifier
+Conditional    links to Statement
+Repeat         links to Statement
+Label          links to Statement
+Operator       links to Statement
+Keyword        links to Statement
+Exception      links to Statement
+Include        links to PreProc
+Define         links to PreProc
+Macro          links to PreProc
+PreCondit      links to PreProc
+StorageClass   links to Type
+Structure      links to Type
+Typedef        links to Type
+Tag            links to Special
+SpecialChar    links to Special
+Delimiter      links to Special
+SpecialComment links to Special
+Debug          links to Special

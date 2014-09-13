@@ -1,0 +1,24 @@
+" termcap colour & highlighting setup for vim v4.2 (os/2)
+" dark  [ew]  1996-04-29..1996-08-12
+" (uses os/2 ansi esc seq's instead of the usual vim esc seq's (doesn't work))
+
+" termcap colour settings
+
+:set t_mr=[0;30;47m  "reverse mode    0+112 (black on lightgray)
+"set t_md=[1;36;44m  "bold mode      11+ 16 (lightcyan on blue)
+:set t_md=[1;33;46m  "bold mode      14+ 48 (yellow on cyan)
+:set t_me=[0;37;40m  "normal mode     7+  0 (lightgray on black)
+ 
+:set t_so=[1;37;41m  "standout mode  15+ 64 (white on red)
+:set t_se=[0;37;40m  "normal mode     7+  0 (lightgray on black)
+
+:set t_us=[0;37;41m  "underline mode  7+ 64 (lightgray on red)
+:set t_ue=[0;37;40m  "normal mode     7+  0 (lightgray on black)
+
+:set t_ZH=[1;37;47m  "italics mode   15+112 (white on lightgray)
+:set t_ZR=[0;37;40m   "normal mode     7+  0 (lightgray on black)
+
+" highlighting
+
+:set highlight=8b,du,es,hs,mb,Ms,nu,rs,sb,tb,vu,ws "[ew]
+"set highlight=8b,db,es,hs,mb,Mn,nu,rs,sr,tb,vr,ws "default

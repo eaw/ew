@@ -1,0 +1,74 @@
+
+if ! has ("gui_running")
+
+  " i hoped these settings would fix vim in "screen", but they didn't ...
+  "set t_AF=[30m       "set foreground (ansi)  (black)
+  "set t_AB=[47m       "set background (ansi)  (lightgray)
+  "set t_Sf=[30m       "set foreground         (black)
+  "set t_Sb=[47m       "set background         (lightgray)
+
+  set t_mr=[0;37;40m  "reverse mode    (lightgray on black)
+  set t_md=[0;34;47m  "bold mode       (blue  on lightgray)
+  set t_me=[0;30;47m  "normal mode     (black on lightgray)
+   
+  set t_so=[1;37;41m  "standout mode   (white on red)
+  set t_se=[0;30;47m  "normal mode     (black on lightgray)
+
+  set t_us=[0;35;47m  "underline mode  (magenta on lightgray)
+  set t_ue=[0;30;47m  "normal mode     (black on lightgray)
+
+  set t_ZH=[0;37;40m  "italics mode    (white on black)
+  set t_ZR=[0;30;47m  "normal mode     (black on lightgray)
+
+endif
+
+hi SpecialKey   term=none start=[0;34;47m stop=[0;30;47m " blue
+hi NonText      term=none start=[1;34;47m stop=[0;30;47m " lightblue
+hi Directory    term=none start=[0;34;47m stop=[0;30;47m " blue
+hi ErrorMsg     term=none start=[1;37;41m stop=[0;30;47m " white/red
+hi  link IncSearch      Visual
+hi Search       term=none start=[0;30;42m stop=[0;30;47m " black/green
+hi MoreMsg      term=bold  ctermfg=2  gui=bold  guifg=SeaGreen
+hi ModeMsg      term=bold  cterm=bold  gui=bold
+hi LineNr       term=none start=[0;33;47m stop=[0;30;47m " brown
+hi Question     term=none start=[1;32;47m stop=[0;30;47m " lightgreen
+hi StatusLine   term=none start=[1;36;44m stop=[0;30;47m " lightcyan/blue
+hi StatusLineNC term=none start=[0;36;40m stop=[0;30;47m " cyan/black
+hi Title        term=bold  ctermfg=5  gui=bold  guifg=Magenta
+hi Visual       term=none start=[1;33;40m stop=[0;30;47m " yellow/black
+hi WarningMsg   term=standout  ctermfg=4  guifg=Red
+hi Cursor       guifg=bg  guibg=fg
+hi Normal       term=none start=[0;30;47m stop=[0;30;47m " black/lightgray
+hi Comment      term=none start=[0;34;47m stop=[0;30;47m " blue
+hi Constant     term=underline  ctermfg=4  guifg=Magenta
+hi Special      term=bold  ctermfg=5  guifg=SlateBlue
+hi Identifier   term=underline  ctermfg=3  guifg=DarkCyan
+hi Statement    term=none start=[0;33;47m stop=[0;30;47m " brown
+hi PreProc      term=underline  ctermfg=5  guifg=Purple
+hi Type         term=underline  ctermfg=2  gui=bold  guifg=SeaGreen
+hi Error        term=none start=[1;37;41m stop=[0;30;47m " white/red
+hi Todo         term=standout  ctermfg=0  ctermbg=14  guifg=Blue  guibg=Yellow
+hi  link String         Constant
+hi  link Character      Constant
+hi  link Number         Constant
+hi  link Boolean        Constant
+hi  link Float          Number
+hi  link Function       Identifier
+hi  link Conditional    Statement
+hi  link Repeat         Statement
+hi  link Label          Statement
+hi  link Operator       Statement
+hi  link Keyword        Statement
+hi  link Exception      Statement
+hi  link Include        PreProc
+hi  link Define         PreProc
+hi  link Macro          PreProc
+hi  link PreCondit      PreProc
+hi  link StorageClass   Type
+hi  link Structure      Type
+hi  link Typedef        Type
+hi  link Tag            Special
+hi  link SpecialChar    Special
+hi  link Delimiter      Special
+hi  link SpecialComment Special
+hi  link Debug          Special

@@ -1,0 +1,45 @@
+Package: telnet
+Priority: standard
+Section: net
+Installed-Size: 176
+Maintainer: Herbert Xu <herbert@debian.org>
+Architecture: i386
+Source: netkit-telnet
+Version: 0.16-4
+Replaces: netstd
+Depends: libc6 (>= 2.1.2), libncurses5
+Filename: dists/potato/main/binary-i386/net/telnet_0.16-4.deb
+Size: 58826
+MD5sum: 9f3a865499f80b3b4975a67f0c65f2cd
+Description: The telnet client.
+ The telnet command is used for interactive communication with another host
+ using the TELNET protocol.
+X-Medium: Debian GNU/Linux 2.2 r0 "Potato" - Official i386 Binary-1 (20000814)
+
+Package: vim
+Priority: optional
+Section: editors
+Installed-Size: 600
+Maintainer: Wichert Akkerman <wakkerma@debian.org>
+Architecture: i386
+Version: 5.6.070-1
+Replaces: vim-rt, vim-tiny, vim-perl, vim-python, vim-tcl, vim-gtk
+Provides: editor
+Depends: libc6 (>= 2.1.2), libgpmg1 (>= 1.14-16), libncurses5
+Pre-Depends: dpkg (>= 1.6.8)
+Recommends: vim-rt
+Suggests: ctags
+Conflicts: vim-tiny, vim-perl, vim-python, vim-tcl, vim-tty, vim-gtk
+Filename: dists/potato/main/binary-i386/editors/vim_5.6.070-1.deb
+Size: 316832
+MD5sum: d1505d321d5eda0f3b47653e7705587a
+Description: Vi IMproved - enhanced vi editor
+ Vim is an almost compatible version of the UNIX editor Vi.  Many new features
+ have been added: multi level undo, syntax highlighting, command line history,
+ on-line help, filename completion, block operations, etc.
+ .
+ This packages contains the vim program itself. The runtime-files are in the
+ vim-rt package. It has been build with all the normal features but without
+ any X support.
+X-Medium: Debian GNU/Linux 2.2 r0 "Potato" - Official i386 Binary-2 (20000814)
+

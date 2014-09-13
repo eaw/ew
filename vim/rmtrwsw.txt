@@ -1,0 +1,12 @@
+:"
+:" remove trailing whitespace & write to file
+:" to use this file, it should be executed with :so! , eg:
+:"    :map <F2> :so! $vim/rmtrwsw^M
+:"
+:" the reason for the two "normal 2k" commands is that without them the cursor
+:" will move down, two lines...
+:"
+:normal 2k
+:%s/[ 	]\+$//g
+:normal 2k
+:w

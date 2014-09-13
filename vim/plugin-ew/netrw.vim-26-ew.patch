@@ -1,0 +1,95 @@
+*** netrw.vim-26	Sat Mar  8 02:19:33 2003
+--- netrw.vim	Sun Mar  9 20:54:59 2003
+***************
+*** 147,159 ****
+    let g:netrw_scp_cmd   = "scp -q"
+  endif
+  if !exists("g:netrw_http_cmd")
+!   let g:netrw_http_cmd  = "wget -O"
+  endif
+  if !exists("g:netrw_dav_cmd")
+    let g:netrw_dav_cmd   = "cadaver"
+  endif
+  if !exists("g:netrw_rsync_cmd")
+!   let g:netrw_rsync_cmd = "rsync -a"
+  endif
+  
+  " Transparency Support:
+--- 147,159 ----
+    let g:netrw_scp_cmd   = "scp -q"
+  endif
+  if !exists("g:netrw_http_cmd")
+!   let g:netrw_http_cmd  = "wget -qO"
+  endif
+  if !exists("g:netrw_dav_cmd")
+    let g:netrw_dav_cmd   = "cadaver"
+  endif
+  if !exists("g:netrw_rsync_cmd")
+!   let g:netrw_rsync_cmd = "rsync -qa"
+  endif
+  
+  " Transparency Support:
+***************
+*** 469,482 ****
+   if a:readcmd[0] == '0'
+    if line("$") == 1 && getline(1) == ""
+     " Now being asked to 0r a file into an empty file.  Safe to :e it instead
+     let curfilename= expand("%")
+!    exe "e!".v:cmdarg." ".fname
+!    exe "f ".curfilename
+    else
+!   let oldul= &ul
+!   set ul=-1
+!   exe a:readcmd.v:cmdarg . " " . fname
+!   let &ul= oldul
+    endif
+   else
+    exe a:readcmd.v:cmdarg . " " . fname
+--- 469,498 ----
+   if a:readcmd[0] == '0'
+    if line("$") == 1 && getline(1) == ""
+     " Now being asked to 0r a file into an empty file.  Safe to :e it instead
++    let prevbufnr = bufnr("#")  " save previous buffer number (preserved below)
+     let curfilename= expand("%")
+!    silent exe "e!".v:cmdarg." ".fname
+!    silent exe "bwipeout!" curfilename | " enable reloading of existing buffer
+!    silent exe "f ".curfilename
+!    " the "real" buffer (with the url) should be hidden when not displayed
+!    " (this is necessary if the hidden option is off)
+!    set bufhidden=hide
+!    " the tmp buffer should either be wiped out (is this safe?) *or* not listed
+!    " (only do *one* of these two)
+!    silent exe "bwipeout" fname
+!    "silent exe "b!" . fname | set nobuflisted | silent b!#
+!    " if possible, switch to the previous buffer and back, so "#" correctly
+!    " refers to this previous buffer, ensuring that ":b #", ":e #", <C-^>, etc
+!    " works as expected
+!    if prevbufnr != -1
+!     silent exe "b!" prevbufnr
+!     silent exe "b!#"
+!    endif
+    else
+!    let oldul= &ul
+!    set ul=-1
+!    exe a:readcmd.v:cmdarg . " " . fname
+!    let &ul= oldul
+    endif
+   else
+    exe a:readcmd.v:cmdarg . " " . fname
+***************
+*** 541,547 ****
+      echo ':Nwrite rcp://machine/path          uses rcp'
+      echo ':Nwrite scp://[user@]machine/path   uses scp'
+      echo ':Nwrite dav://[user@]machine/path   uses cadaver'
+!     echo ':Nwrite rsync://[user@]machine/path uses cadaver'
+      break
+  
+     elseif match(choice,"^\"") != -1
+--- 557,563 ----
+      echo ':Nwrite rcp://machine/path          uses rcp'
+      echo ':Nwrite scp://[user@]machine/path   uses scp'
+      echo ':Nwrite dav://[user@]machine/path   uses cadaver'
+!     echo ':Nwrite rsync://[user@]machine/path uses rsync'
+      break
+  
+     elseif match(choice,"^\"") != -1
