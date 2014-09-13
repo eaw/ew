@@ -1,0 +1,24 @@
+[user]
+	name = Erik Warendorph
+	email = erik.warendorph@meltwater.com
+[color]
+	ui = auto
+[core]
+	pager = less -FRX
+[alias]
+  st = status
+  ci = commit
+  cia = commit -a
+  br = branch
+  co = checkout
+  df = diff
+  lg = log -p
+  lol = log --graph --decorate --pretty=oneline --abbrev-commit
+  lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+  lom = log --graph --decorate --pretty=medium --abbrev-commit
+  loma = log --graph --decorate --pretty=medium --abbrev-commit --all
+  lomas = log --graph --decorate --pretty=medium --abbrev-commit --all --stat
+  ls = ls-files
+  unstage = reset HEAD --
+  pp = !"git pull; git push; echo; git pull; git push"
+
