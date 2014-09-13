@@ -1,0 +1,41 @@
+#==============================================================================
+# .inputrc
+# [ew]
+# 1997-10-15..1998-05-12..1998-07-12..2000-03-25..2008-06-26..2008-10-27
+#------------------------------------------------------------------------------
+
+#---
+# variables
+
+set bell-style none
+set visible-stats on
+#set horizontal-scroll-mode on
+#set show-all-if-ambiguous on
+#set -o vi
+#set -o emacs
+#
+
+#---
+# bindings
+
+"\e[3~":   delete-char        # delete
+"\e[1~":   beginning-of-line  # home
+"\e[4~":   end-of-line        # end
+"\e\e[3~": kill-word          # esc-delete
+
+# These doesn't seem to work anymore...
+"\e[[A":   "help "        # f1
+#"\e[23~":  "man "         # shift-f1 - this seems to be f11 ... ???
+"\e[25~":  "man "         # shift-f1
+
+"\ep": history-search-backward   # esc-p
+"\en": history-search-forward    # esc-n
+
+# The following two was added 2008-06-26, hopefully they work as intended...
+"\e[A": history-search-backward  # cursor-up
+"\e[B": history-search-forward   # cursor-down
+"\eOA": history-search-backward  # cursor-up
+"\eOB": history-search-forward   # cursor-down
+
+#== end-of-file: .inputrc =====================================================
+
